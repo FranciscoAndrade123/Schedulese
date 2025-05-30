@@ -29,10 +29,11 @@ public class Patient {
     }
 
     //Constructor con parámetros
-    public Patient(String name, String email, boolean notificationPermission) {
+    public Patient(int patientID, String name, String email, boolean notificationPermission) {
         this.name = name;
         this.email = email;
         this.notificationPermission = notificationPermission;
+        this.patientID = patientID;
     }
 
     // Getters y Setters

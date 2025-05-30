@@ -31,10 +31,11 @@ public class Medication {
     }
 
     //Constructor con parámetros
-    public Medication(String name, String dosage, int frequencyHours) {
+    public Medication(int medicationID, String name, String dosage, int frequencyHours) {
         this.name = name;
         this.dosage = dosage;
         this.frequencyHours = frequencyHours;
+        this.medicationID = medicationID;
     }
 
     // Getters y Setters
@@ -61,5 +62,14 @@ public class Medication {
     public void setDosage(String dosage) {
         this.dosage = dosage;
     }
+
+    public int getFrequencyHours() {
+        return frequencyHours;
+    }
+
+    public void setFrequencyHours(int frequencyHours) {
+        this.frequencyHours = frequencyHours;
+    }
+
 
 }

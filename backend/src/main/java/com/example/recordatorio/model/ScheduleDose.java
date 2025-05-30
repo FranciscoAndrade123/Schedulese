@@ -37,18 +37,18 @@ public class ScheduleDose {
 
     //Si esta confirmado 
     @Column(name = "isConfirmed", nullable = false)
-    private Boolean isConfirmed;
+    private Integer isConfirmed;
 
     //Duracion de la dosis en dias
     @Column(name = "durationDays", nullable = false)
-    private int durationDays;
+    private Integer durationDays;
 
     // Constructor por defecto es necesario para JPA
     public ScheduleDose() {
     }
 
     // Constructor con parámetros
-    public ScheduleDose(int doseID, Medication medicationID, Patient patientID, LocalDate startDate, Boolean isConfirmed, int durationDays) {
+    public ScheduleDose(int doseID, Medication medicationID, Patient patientID, LocalDate startDate, Integer isConfirmed, Integer durationDays) {
         this.doseID = doseID;
         this.medicationID = medicationID;
         this.patientID = patientID;
@@ -90,19 +90,19 @@ public class ScheduleDose {
         this.startDate = startDate;
     }
 
-    public Boolean getIsConfirmed() {
+    public Integer getIsConfirmed() {
         return isConfirmed;
     }
 
-    public void setIsConfirmed(Boolean isConfirmed) {
+    public void setIsConfirmed(Integer isConfirmed) {
         this.isConfirmed = isConfirmed;
     }
 
-    public int getDurationDays() {
+    public Integer getDurationDays() {
         return durationDays;
     }
 
-    public void setDurationDays(int durationDays) {
+    public void setDurationDays(Integer durationDays) {
         this.durationDays = durationDays;
     }
 
