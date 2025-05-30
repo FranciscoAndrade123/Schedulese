@@ -1,6 +1,8 @@
 package com.example.recordatorio.model;
 
-import java.security.Timestamp;
+
+
+import java.time.LocalDateTime;
 
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
@@ -27,16 +29,16 @@ public class Reminder {
 
     
     @Column(name = "sendAt", nullable = false)
-    private Timestamp sendAt;
+    private LocalDateTime sendAt;
 
     @Column(name = "status", nullable = false)
-    private Boolean status;
+    private int status;
 
     // Constructor por defecto es necesario para JPA
     public Reminder() {}
 
     // Constructor con parámetros
-    public Reminder(int reminderID, ScheduleDose doseID, Timestamp sendAt, Boolean status) {
+    public Reminder(int reminderID, ScheduleDose doseID, LocalDateTime sendAt, int status) {
         this.reminderID = reminderID;
         this.doseID = doseID;
         this.sendAt = sendAt;
@@ -61,19 +63,19 @@ public class Reminder {
         this.doseID = doseID;
     }
 
-    public Timestamp getSendAt() {
+    public LocalDateTime getSendAt() {
         return sendAt;
     }
 
-    public void setSendAt(Timestamp sendAt) {
+    public void setSendAt(LocalDateTime sendAt) {
         this.sendAt = sendAt;
     }
 
-    public Boolean getStatus() {
+    public int getStatus() {
         return status;
     }
 
-    public void setStatus(Boolean status) {
+    public void setStatus(int status) {
         this.status = status;
     }
 
