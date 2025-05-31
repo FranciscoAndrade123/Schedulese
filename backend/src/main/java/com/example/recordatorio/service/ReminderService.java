@@ -29,12 +29,12 @@ public class ReminderService {
 
     
    // Método para crear y guardar un nuevo recordatorio asociado a una dosis
-    public ResponseDTO createNewReminder(int doseId) {
+    public Reminder createNewReminder(ScheduleDose dose) {
 
     // Buscar la dosis por su ID
-    Optional<ScheduleDose> doseOpt = scheduleDoseRepository.findById(doseId);
+    Optional<ScheduleDose> doseOpt = scheduleDoseRepository.findById(dose.getDoseID());
     if (!doseOpt.isPresent()) {
-        return new ResponseDTO("Dosis no encontrada", HttpStatus.NOT_FOUND.toString());
+        return null; // O lanza una excepción si prefieres
     }
 
     // Crear el recordatorio
@@ -46,7 +46,7 @@ public class ReminderService {
     // Guardar el recordatorio
     reminderRepository.save(reminder);
 
-    return new ResponseDTO("Recordatorio creado exitosamente", HttpStatus.OK.toString());
+    return reminder;
 }
 
      // Marcar reminder como confirmado por ID

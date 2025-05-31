@@ -1,6 +1,7 @@
 package com.example.recordatorio.model;
 
-import java.time.LocalDate;
+
+import java.time.LocalDateTime;
 
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
@@ -33,7 +34,7 @@ public class ScheduleDose {
 
     //Fecha de incio 
     @Column(name = "startDate", nullable = false)
-    private LocalDate startDate;
+    private LocalDateTime startDate;
 
     //Si esta confirmado 
     @Column(name = "isConfirmed", nullable = false)
@@ -48,7 +49,7 @@ public class ScheduleDose {
     }
 
     // Constructor con parámetros
-    public ScheduleDose(int doseID, Medication medicationID, Patient patientID, LocalDate startDate, Integer isConfirmed, Integer durationDays) {
+    public ScheduleDose(int doseID, Medication medicationID, Patient patientID, LocalDateTime startDate, Integer isConfirmed, Integer durationDays) {
         this.doseID = doseID;
         this.medicationID = medicationID;
         this.patientID = patientID;
@@ -82,11 +83,11 @@ public class ScheduleDose {
         this.patientID = patientID;
     }
 
-    public LocalDate getStartDate() {
+    public LocalDateTime getStartDate() {
         return startDate;
     }
 
-    public void setStartDate(LocalDate startDate) {
+    public void setStartDate(LocalDateTime startDate) {
         this.startDate = startDate;
     }
 
